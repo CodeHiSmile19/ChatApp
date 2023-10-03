@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'home_chat_screen.dart';
 import 'input_phone_number.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const InputPhoneNumber(),
+      home: const HomeChatScreen(),
     );
   }
 }

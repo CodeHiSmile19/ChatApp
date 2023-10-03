@@ -1,0 +1,4 @@
+#Tue Oct 03 19:41:28 ICT 2023
+base.0=/Users/tuandq/ChatApp/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
