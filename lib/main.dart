@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'home_chat_screen.dart';
+import 'contacts_screen.dart';
 import 'input_phone_number.dart';
 
 void main() {
@@ -18,7 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeChatScreen(),
+      home: const MyHomePage(
+        title: 'Home Screen',
+      ),
     );
   }
 }
@@ -75,28 +77,39 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             textAlign: TextAlign.center,
           ),
-          Container(
-            margin: const EdgeInsets.only(
-              top: 18,
-              bottom: 20,
-              left: 24,
-              right: 24,
-            ),
-            height: 52,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: const Color(0xFF002ED3),
-            ),
-            child: const Center(
-              child: Text(
-                "Start Messaging",
-                style: TextStyle(
-                  color: Colors.white,
+
+          InkWell(
+            onTap: () {
+              print("HiSmile ");
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const InputPhoneNumber(),
+                ),
+              );
+            },
+            child: Container(
+              margin: const EdgeInsets.only(
+                top: 18,
+                bottom: 20,
+                left: 24,
+                right: 24,
+              ),
+              height: 52,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: const Color(0xFF002ED3),
+              ),
+              child: const Center(
+                child: Text(
+                  "Start Messaging",
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

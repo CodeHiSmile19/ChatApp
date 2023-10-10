@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'contacts_screen.dart';
+import 'home_screen.dart';
+
 class InputPhoneNumber extends StatefulWidget {
   const InputPhoneNumber({Key? key}) : super(key: key);
 
@@ -18,13 +21,19 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 14,
-                  left: 16,
-                ),
-                child: SvgPicture.asset(
-                  "assets/vectors/ic_arrow_left.svg",
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pop();
+                  // Navigator.pop(context); //Chọn 1 trong 2
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 14,
+                    horizontal: 16,
+                  ),
+                  child: SvgPicture.asset(
+                    "assets/vectors/ic_arrow_left.svg",
+                  ),
                 ),
               ),
               const SizedBox(height: 98),
@@ -38,7 +47,7 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
                   ),
                 ),
               ),
-              SizedBox(height: 48),
+              const SizedBox(height: 48),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 24,
@@ -81,6 +90,39 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              const Spacer(),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
+                    ),
+                    (Route<dynamic> route) => false,
+                  );
+                },
+                child: Container(
+                  margin: const EdgeInsets.only(
+                    top: 18,
+                    bottom: 20,
+                    left: 24,
+                    right: 24,
+                  ),
+                  height: 52,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: const Color(0xFF002ED3),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      "Continue",
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
