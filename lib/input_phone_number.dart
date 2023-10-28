@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_group_200_chat_app/home_screen_2/home_screen2.dart';
+import 'package:flutter_group_200_chat_app/models/phone_number_entity.dart';
+import 'package:flutter_group_200_chat_app/service/isar_service.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'contacts_screen.dart';
-import 'home_screen.dart';
+import 'package:isar/isar.dart';
+import 'package:path_provider/path_provider.dart';
 
 class InputPhoneNumber extends StatefulWidget {
   const InputPhoneNumber({Key? key}) : super(key: key);
@@ -13,6 +14,8 @@ class InputPhoneNumber extends StatefulWidget {
 }
 
 class _InputPhoneNumberState extends State<InputPhoneNumber> {
+  TextEditingController phoneNumberController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +58,7 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
                 ),
                 child: Row(
                   children: <Widget>[
-                    Container(
+                    /*Container(
                       height: 36,
                       width: 74,
                       margin: const EdgeInsets.only(right: 8),
@@ -63,21 +66,25 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
                         color: Colors.yellow, // Color(0xFFF7F7FC),
                         borderRadius: BorderRadius.circular(4),
                       ),
-                    ),
+                    ),*/
 
                     ///Bật bàn phím trên máy ảo: Ctrl + K
                     Expanded(
                       child: Container(
-                        height: 36,
+                        height: 40,
                         decoration: BoxDecoration(
-                          color: Color(0xFFF7F7FC),
+                          color: const Color(0xFFF7F7FC),
                           borderRadius: BorderRadius.circular(4),
+                          border: Border.all(
+                            color: Colors.grey.withOpacity(0.5),
+                          ),
                         ),
                         padding: const EdgeInsets.symmetric(
                           horizontal: 8,
                           vertical: 4,
                         ),
                         child: TextFormField(
+                          controller: phoneNumberController,
                           keyboardType: TextInputType.number,
                           decoration: const InputDecoration(
                             hintText: "Phone Number",
@@ -95,13 +102,29 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
               ),
               const Spacer(),
               InkWell(
-                onTap: () {
-                  Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(
-                      builder: (context) => const HomeScreen2(),
-                    ),
-                    (Route<dynamic> route) => false,
+                onTap: () async {
+                  ///Open Isar service
+                  final isarService = IsarService();
+
+                  ///Lấy về text mình vừa nhập xong
+                  final newPhone = PhoneNumberEntity(
+                    phoneNumber: phoneNumberController.text,
                   );
+
+                  ///Save số điện thoại này vào local máy -> call hàm create
+                  final result = await isarService.createPhoneNumber(newPhone);
+
+                  ///Nếu lưu thành công thì vào màn HomeScreen
+                  if (result) {
+                    if (context.mounted) {
+                      Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen2(),
+                        ),
+                        (Route<dynamic> route) => false,
+                      );
+                    }
+                  }
                 },
                 child: Container(
                   margin: const EdgeInsets.only(

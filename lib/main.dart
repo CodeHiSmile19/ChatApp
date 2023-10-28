@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_group_200_chat_app/models/phone_number_entity.dart';
+import 'package:flutter_group_200_chat_app/service/isar_service.dart';
+import 'package:isar/isar.dart';
+import 'package:path_provider/path_provider.dart';
 
-import 'contacts_screen.dart';
+import 'home_screen_2/home_screen2.dart';
 import 'input_phone_number.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -35,6 +40,43 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  @override
+  void initState() {
+    ///Hàm initState không thực hiện bất đồng bộ được
+    _initialPage();
+    super.initState();
+  }
+
+  void _initialPage() async {
+    await Future.delayed(const Duration(seconds: 2));
+    /// Mở Isar service
+    final isarService = IsarService();
+
+    ///Lấy về số điện thoại đã lưu trong database
+    final phones = await isarService.getAllPhoneNumbers();
+
+    ///Nếu danh sách lấy về không rỗng (có SDT đã đăng nhập) => Vào màn Home
+    ///Nếu danh sách trống (Chưa đăng nhập) => Vào màn nhập SDT
+    if (phones.isNotEmpty) {
+      if (context.mounted) {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen2(),
+          ),
+        );
+      }
+    } else {
+      if (context.mounted) {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const InputPhoneNumber(),
+          ),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,16 +119,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             textAlign: TextAlign.center,
           ),
-
           InkWell(
-            onTap: () {
-              print("HiSmile ");
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const InputPhoneNumber(),
-                ),
-              );
-            },
+            onTap: () async {},
             child: Container(
               margin: const EdgeInsets.only(
                 top: 18,
