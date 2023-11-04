@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_group_200_chat_app/home_screen_2/home_screen2.dart';
+import 'package:flutter_group_200_chat_app/models/phone_number.dart';
 import 'package:flutter_group_200_chat_app/models/phone_number_entity.dart';
+import 'package:flutter_group_200_chat_app/service/fire_storage_service.dart';
 import 'package:flutter_group_200_chat_app/service/isar_service.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:isar/isar.dart';
@@ -103,7 +105,7 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
               const Spacer(),
               InkWell(
                 onTap: () async {
-                  ///Open Isar service
+                  /* ///Open Isar service
                   final isarService = IsarService();
 
                   ///Lấy về text mình vừa nhập xong
@@ -124,6 +126,31 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
                         (Route<dynamic> route) => false,
                       );
                     }
+                  }*/
+
+                  try {
+                    ///Open FireStorage Service
+                    final fireStorageService = FireStorageService();
+
+                    ///Lấy về text mình vừa nhập xong
+                    final newPhone = PhoneNumber(
+                      phone: phoneNumberController.text,
+                    );
+
+                    ///Save số điện thoại lên Firestorage
+                    await fireStorageService.createPhoneNumber(newPhone);
+
+                    ///Nếu lưu thành công thì vào màn HomeScreen
+                    if (context.mounted) {
+                      Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen2(),
+                        ),
+                        (Route<dynamic> route) => false,
+                      );
+                    }
+                  } catch (e) {
+                    print("Loi them data");
                   }
                 },
                 child: Container(
