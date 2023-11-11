@@ -37,93 +37,90 @@ class _HomeScreen2State extends State<HomeScreen2> {
       create: (context) {
         return _cubit;
       },
-      child: BlocBuilder<HomeCubit, HomeState>(
-        buildWhen: (previous, current) {
-          return previous.selectedIndex != current.selectedIndex;
-        },
-        builder: (context,state) {
-          return Scaffold(
-            body: PageView(
-              controller: controller,
-              children: const <Widget>[
-                ListContactScreen(),
-                ChatsScreen(),
-                MoreScreen(),
-              ],
-            ),
-            bottomNavigationBar: BottomNavigationBar(
-              items: <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    "assets/vectors/ic_contact.svg",
-                  ),
-                  activeIcon: const Column(
-                    children: [
-                      Text(
-                        "Contacts",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF0F1828)),
-                      ),
-                      SizedBox(height: 8),
-                      DotWidget(),
-                    ],
-                  ),
-                  label: '',
+      child: BlocBuilder<HomeCubit, HomeState>(buildWhen: (previous, current) {
+        return previous.selectedIndex != current.selectedIndex;
+      }, builder: (context, state) {
+        return Scaffold(
+          body: PageView(
+            controller: controller,
+            children: const <Widget>[
+              ListContactScreen(),
+              ChatsScreen(),
+              MoreScreen(),
+            ],
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  "assets/vectors/ic_contact.svg",
                 ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    "assets/vectors/ic_chat.svg",
-                  ),
-                  activeIcon: const Column(
-                    children: [
-                      Text(
-                        "Chats",
-                        style: TextStyle(
+                activeIcon: Column(
+                  children: const [
+                    Text(
+                      "Contacts",
+                      style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          color: Color(0xFF0F1828),
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      DotWidget(),
-                    ],
-                  ),
-                  label: '',
+                          color: Color(0xFF0F1828)),
+                    ),
+                    SizedBox(height: 8),
+                    DotWidget(),
+                  ],
                 ),
-                BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    "assets/vectors/ic_more.svg",
-                  ),
-                  activeIcon: const Column(
-                    children: [
-                      Text(
-                        "More",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF0F1828)),
-                      ),
-                      SizedBox(height: 8),
-                      DotWidget(),
-                    ],
-                  ),
-                  label: '',
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  "assets/vectors/ic_chat.svg",
                 ),
-              ],
-              type: BottomNavigationBarType.fixed,
-              currentIndex: state.selectedIndex,
-              selectedItemColor: Colors.black,
-              onTap: (index) {
-                _cubit.changeTab(index);
-                controller.jumpToPage(index);
-              },
-              elevation: 5,
-            ),
-          );
-        }
-      ),
+                activeIcon: Column(
+                  children: const [
+                    Text(
+                      "Chats",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF0F1828),
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    DotWidget(),
+                  ],
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: SvgPicture.asset(
+                  "assets/vectors/ic_more.svg",
+                ),
+                activeIcon: Column(
+                  children: const [
+                    Text(
+                      "More",
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF0F1828)),
+                    ),
+                    SizedBox(height: 8),
+                    DotWidget(),
+                  ],
+                ),
+                label: '',
+              ),
+            ],
+            type: BottomNavigationBarType.fixed,
+            currentIndex: state.selectedIndex,
+            selectedItemColor: Colors.black,
+            onTap: (index) {
+              _cubit.changeTab(index);
+              controller.jumpToPage(index);
+            },
+            elevation: 5,
+          ),
+        );
+      }),
     );
   }
 }

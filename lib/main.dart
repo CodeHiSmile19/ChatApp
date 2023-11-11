@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_group_200_chat_app/service/isar_service.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import 'home_screen_2/home_screen2.dart';
 import 'input_phone_number.dart';
@@ -39,7 +43,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   void initState() {
     ///Hàm initState không thực hiện bất đồng bộ được
@@ -49,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _initialPage() async {
     await Future.delayed(const Duration(seconds: 2));
+
     /// Mở Isar service
     final isarService = IsarService();
 
@@ -74,6 +78,27 @@ class _MyHomePageState extends State<MyHomePage> {
         );
       }
     }
+  }
+
+  Future<void> _initApp() async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (Platform.isIOS) {
+        await FirebaseMessaging.instance.requestPermission();
+      } else {
+        await Permission.notification.isDenied.then((value) {
+          if (value) {
+            Permission.notification.request();
+          }
+        });
+      }
+
+      // await FirebaseMessaging.instance.deleteToken();
+      final deviceToken = await FirebaseMessaging.instance.getToken();
+      // GlobalData.instance.deviceToken = deviceToken;
+      // logger.d('Firebase Device TOKEN:\n$deviceToken');
+    });
+    // _cubit.checkVersion();
+    // await Future.delayed(const Duration(seconds: 1), () => _cubit.checkLogin());
   }
 
   @override

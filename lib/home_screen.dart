@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -17,6 +18,20 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   final PageController controller = PageController();
 
+  void _setupFirebaseMessage() {
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
+      if (message.notification != null) {
+        await buildNotificationSnackBar(message);
+      }
+      debugPrint('RemoteMessage $message');
+    });
+  }
+
+  Future<void> buildNotificationSnackBar(RemoteMessage? noti) async {
+    // final body = NotificationMessageDetail.fromJson(noti?.data ?? {});
+    ///Show snackBar
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,8 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: SvgPicture.asset(
               "assets/vectors/ic_contact.svg",
             ),
-            activeIcon: const Column(
-              children: [
+            activeIcon: Column(
+              children: const [
                 Text(
                   "Contacts",
                   style: TextStyle(
@@ -53,8 +68,8 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: SvgPicture.asset(
               "assets/vectors/ic_chat.svg",
             ),
-            activeIcon: const Column(
-              children: [
+            activeIcon: Column(
+              children: const [
                 Text(
                   "Chats",
                   style: TextStyle(
@@ -73,8 +88,8 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: SvgPicture.asset(
               "assets/vectors/ic_more.svg",
             ),
-            activeIcon: const Column(
-              children: [
+            activeIcon: Column(
+              children: const [
                 Text(
                   "More",
                   style: TextStyle(
