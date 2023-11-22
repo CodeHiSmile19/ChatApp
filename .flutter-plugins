@@ -1,8 +1,12 @@
 # This is a generated file; do not edit or check into version control.
 cloud_firestore=/Users/tuandq/.pub-cache/hosted/pub.dev/cloud_firestore-4.12.2/
 cloud_firestore_web=/Users/tuandq/.pub-cache/hosted/pub.dev/cloud_firestore_web-3.8.3/
+firebase_auth=/Users/tuandq/.pub-cache/hosted/pub.dev/firebase_auth-4.12.1/
+firebase_auth_web=/Users/tuandq/.pub-cache/hosted/pub.dev/firebase_auth_web-5.8.6/
 firebase_core=/Users/tuandq/.pub-cache/hosted/pub.dev/firebase_core-2.21.0/
 firebase_core_web=/Users/tuandq/.pub-cache/hosted/pub.dev/firebase_core_web-2.8.1/
+firebase_messaging=/Users/tuandq/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.3/
+firebase_messaging_web=/Users/tuandq/.pub-cache/hosted/pub.dev/firebase_messaging_web-3.5.12/
 firebase_storage=/Users/tuandq/.pub-cache/hosted/pub.dev/firebase_storage-11.4.1/
 firebase_storage_web=/Users/tuandq/.pub-cache/hosted/pub.dev/firebase_storage_web-3.6.12/
 isar_flutter_libs=/Users/tuandq/.pub-cache/hosted/pub.dev/isar_flutter_libs-3.1.0+1/
@@ -11,3 +15,7 @@ path_provider_android=/Users/tuandq/.pub-cache/hosted/pub.dev/path_provider_andr
 path_provider_foundation=/Users/tuandq/.pub-cache/hosted/pub.dev/path_provider_foundation-2.3.1/
 path_provider_linux=/Users/tuandq/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
 path_provider_windows=/Users/tuandq/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1/
+permission_handler=/Users/tuandq/.pub-cache/hosted/pub.dev/permission_handler-11.0.1/
+permission_handler_android=/Users/tuandq/.pub-cache/hosted/pub.dev/permission_handler_android-11.1.0/
+permission_handler_apple=/Users/tuandq/.pub-cache/hosted/pub.dev/permission_handler_apple-9.1.4/
+permission_handler_windows=/Users/tuandq/.pub-cache/hosted/pub.dev/permission_handler_windows-0.1.3/

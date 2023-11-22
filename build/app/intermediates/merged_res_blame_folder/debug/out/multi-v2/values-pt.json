@@ -1,16 +1,33 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.flutter_group_200_chat_app-mergeDebugResources-14:/values-pt/values-pt.xml",
+            "outputFile": "com.example.flutter_group_200_chat_app-mergeDebugResources-17:/values-pt/values-pt.xml",
             "map": [
                 {
-                    "source": "/Users/tuandq/.gradle/caches/transforms-3/3be02ad4edcf74a761fbb19169351135/transformed/core-1.6.0/res/values-pt/values-pt.xml",
+                    "source": "/Users/tuandq/.gradle/caches/transforms-3/28b4485b0aa1e314ce07955fb3692669/transformed/browser-1.4.0/res/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,170,269,381",
+                        "endColumns": "114,98,111,105",
+                        "endOffsets": "165,264,376,482"
+                    }
+                },
+                {
+                    "source": "/Users/tuandq/.gradle/caches/transforms-3/5972a494867966c51af06fff81a0cdc0/transformed/core-1.6.0/res/values-pt/values-pt.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
                         "endColumns": "100",
                         "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "487",
+                        "endColumns": "100",
+                        "endOffsets": "583"
                     }
                 }
             ]

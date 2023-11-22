@@ -27,7 +27,7 @@
     },
     {
       "name": "async",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/async-2.11.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/async-2.10.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -45,9 +45,9 @@
     },
     {
       "name": "build",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build-2.4.1",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build-2.3.1",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "2.17"
     },
     {
       "name": "build_config",
@@ -57,27 +57,27 @@
     },
     {
       "name": "build_daemon",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build_daemon-4.0.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build_daemon-3.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "build_resolvers",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build_resolvers-2.4.1",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build_resolvers-2.4.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.19"
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build_runner-2.4.6",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build_runner-2.3.3",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.14"
     },
     {
       "name": "build_runner_core",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build_runner_core-7.2.11",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/build_runner_core-7.2.7+1",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "2.17"
     },
     {
       "name": "built_collection",
@@ -93,7 +93,7 @@
     },
     {
       "name": "characters",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/characters-1.3.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/characters-1.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -135,9 +135,9 @@
     },
     {
       "name": "collection",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/collection-1.17.2",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/collection-1.17.0",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.12"
     },
     {
       "name": "convert",
@@ -183,15 +183,33 @@
     },
     {
       "name": "ffi",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/ffi-2.1.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/ffi-2.0.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.17"
     },
     {
       "name": "file",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/file-7.0.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/file-6.1.4",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "firebase_auth",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/firebase_auth-4.12.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_auth_platform_interface",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/firebase_auth_platform_interface-7.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_auth_web",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/firebase_auth_web-5.8.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
     },
     {
       "name": "firebase_core",
@@ -208,6 +226,24 @@
     {
       "name": "firebase_core_web",
       "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/firebase_core_web-2.8.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_messaging",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/firebase_messaging-14.7.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_messaging_platform_interface",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/firebase_messaging_platform_interface-4.5.12",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_messaging_web",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/firebase_messaging_web-3.5.12",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -237,9 +273,9 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///Users/tuandq/fvm/versions/3.13.0/packages/flutter",
+      "rootUri": "file:///Users/tuandq/fvm/versions/3.7.10/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_bloc",
@@ -261,15 +297,15 @@
     },
     {
       "name": "flutter_test",
-      "rootUri": "file:///Users/tuandq/fvm/versions/3.13.0/packages/flutter_test",
+      "rootUri": "file:///Users/tuandq/fvm/versions/3.7.10/packages/flutter_test",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///Users/tuandq/fvm/versions/3.13.0/packages/flutter_web_plugins",
+      "rootUri": "file:///Users/tuandq/fvm/versions/3.7.10/packages/flutter_web_plugins",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.17"
     },
     {
       "name": "frontend_server_client",
@@ -291,9 +327,9 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/http-1.1.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/http-0.13.6",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.19"
     },
     {
       "name": "http_multi_server",
@@ -333,9 +369,9 @@
     },
     {
       "name": "js",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/js-0.6.7",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/js-0.6.5",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "2.16"
     },
     {
       "name": "json_annotation",
@@ -345,9 +381,9 @@
     },
     {
       "name": "json_serializable",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/json_serializable-6.7.1",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/json_serializable-6.6.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.19"
     },
     {
       "name": "lints",
@@ -363,19 +399,19 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/matcher-0.12.16",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/matcher-0.12.13",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "material_color_utilities",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/material_color_utilities-0.5.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/material_color_utilities-0.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.13"
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/meta-1.9.1",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/meta-1.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -399,7 +435,7 @@
     },
     {
       "name": "path",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/path-1.8.3",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/path-1.8.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -444,6 +480,36 @@
       "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/path_provider_windows-2.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "permission_handler",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/permission_handler-11.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_android",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/permission_handler_android-11.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_apple",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/permission_handler_apple-9.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_platform_interface",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/permission_handler_platform_interface-3.12.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "permission_handler_windows",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/permission_handler_windows-0.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "petitparser",
@@ -501,15 +567,15 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///Users/tuandq/fvm/versions/3.13.0/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/tuandq/fvm/versions/3.7.10/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.12"
     },
     {
       "name": "source_gen",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/source_gen-1.4.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/source_gen-1.3.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.18"
     },
     {
       "name": "source_helper",
@@ -519,9 +585,9 @@
     },
     {
       "name": "source_span",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/source_span-1.10.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/source_span-1.9.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.14"
     },
     {
       "name": "stack_trace",
@@ -555,7 +621,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/test_api-0.6.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/test_api-0.4.16",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
@@ -603,15 +669,9 @@
     },
     {
       "name": "watcher",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/watcher-1.1.0",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/watcher-1.0.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
-    },
-    {
-      "name": "web",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/web-0.1.4-beta",
-      "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "2.14"
     },
     {
       "name": "web_socket_channel",
@@ -621,9 +681,9 @@
     },
     {
       "name": "win32",
-      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/win32-5.0.9",
+      "rootUri": "file:///Users/tuandq/.pub-cache/hosted/pub.dev/win32-4.1.4",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "2.17"
     },
     {
       "name": "xdg_directories",
@@ -656,7 +716,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-11-04T06:27:32.002408Z",
+  "generated": "2023-11-22T15:20:11.378284Z",
   "generator": "pub",
-  "generatorVersion": "3.1.0"
+  "generatorVersion": "2.19.6"
 }

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_group_200_chat_app/home_screen_2/home_screen2.dart';
 import 'package:flutter_group_200_chat_app/models/phone_number.dart';
@@ -17,6 +18,7 @@ class InputPhoneNumber extends StatefulWidget {
 
 class _InputPhoneNumberState extends State<InputPhoneNumber> {
   TextEditingController phoneNumberController = TextEditingController();
+  String? _verificationCode;
 
   @override
   Widget build(BuildContext context) {
@@ -104,8 +106,9 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
               ),
               const Spacer(),
               InkWell(
-                onTap: () async {
-                  /* ///Open Isar service
+                onTap: _verifyPhone,
+                /*onTap: () async {
+                  */ /* ///Open Isar service
                   final isarService = IsarService();
 
                   ///Lấy về text mình vừa nhập xong
@@ -126,7 +129,7 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
                         (Route<dynamic> route) => false,
                       );
                     }
-                  }*/
+                  }*/ /*
 
                   try {
                     ///Open FireStorage Service
@@ -152,7 +155,7 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
                   } catch (e) {
                     print("Loi them data");
                   }
-                },
+                },*/
                 child: Container(
                   margin: const EdgeInsets.only(
                     top: 18,
@@ -176,10 +179,79 @@ class _InputPhoneNumberState extends State<InputPhoneNumber> {
                   ),
                 ),
               ),
+              InkWell(
+                onTap: loginWihOTP,
+                child: Container(
+                  color: Colors.orange,
+                  height: 40,
+                  width: 100,
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  _verifyPhone() async {
+    try {
+      await FirebaseAuth.instance.verifyPhoneNumber(
+        phoneNumber: '+84${phoneNumberController.text}',
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await FirebaseAuth.instance
+              .signInWithCredential(credential)
+              .then((value) async {
+            if (value.user != null) {
+              loginWihOTP();
+            }
+          });
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          print(e.message);
+        },
+        codeSent: (String? verficationID, int? resendToken) {
+          setState(() {
+            _verificationCode = verficationID;
+            print("HiSmile verficationID: $verficationID");
+          });
+        },
+        codeAutoRetrievalTimeout: (String verificationID) {
+          setState(() {
+            _verificationCode = verificationID;
+            print("HiSmile verficationID: $verificationID");
+          });
+        },
+        timeout: Duration(seconds: 120),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString()),
+        ),
+      );
+    }
+  }
+
+  void loginWihOTP() async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithCredential(PhoneAuthProvider.credential(
+              verificationId: _verificationCode!, smsCode: '123456'))
+          .then((value) async {
+        if (value.user != null) {
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen2()),
+              (route) => false);
+        }
+      });
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString()),
+        ),
+      );
+    }
   }
 }
